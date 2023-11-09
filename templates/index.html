@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> /<3/</title>
+</head>
+<body>
+    <form method="POST" action="/classify">
+        <label for="text">Enter Text:</label>
+        <textarea id="text" name="text" rows="4" required></textarea>
+        <button type="submit">Classify Text</button>
+    </form>
+
+    {% if text %}
+        <h2>Input Text:</h2>
+        <p>{{ text }}</p>
+    {% endif %}
+
+    {% if result %}
+        <h2>Classification Result:</h2>
+        <p>Label: {{ result['label'] }}</p>
+        <p>Score: {{ result['score'] }}</p>
+    {% endif %}
+</body>
+</html>
